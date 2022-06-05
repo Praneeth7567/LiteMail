@@ -1,0 +1,35 @@
+{% extends "mail/layout.html" %}
+{% load static %}
+
+{% block body %}
+    <h2>{{ request.user.email }}</h2>
+
+    <button class="btn btn-sm btn-outline-primary" id="inbox"><i class="fa fa-inbox"></i> Inbox</button>
+    <button class="btn btn-sm btn-outline-primary" id="compose"><i class="fa fa-plus"></i> Compose</button>
+    <button class="btn btn-sm btn-outline-primary" id="sent"><i class="fa fa-paper-plane"></i> Sent</button>
+    <button class="btn btn-sm btn-outline-primary" id="archived"><i class="fa fa-archive"></i> Archived</button>
+    <a class="btn btn-sm btn-outline-danger float-right" href="{% url 'logout' %}">Log Out <i class="fa fa-sign-out"></i></a>
+    <hr>
+    <div id="emails-view">
+    </div>
+    <div id="compose-view">
+        <h3>New Email</h3>
+        <form id="compose-form">
+            <div class="form-group">
+                From: <input disabled class="form-control" value="{{ request.user.email }}">
+            </div>
+            <div class="form-group">
+                To: <input id="compose-recipients" class="form-control">
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="compose-subject" placeholder="Subject">
+            </div>
+            <textarea class="form-control" id="compose-body" placeholder="Body"></textarea>
+            <button id = "submit" onclick="document.getElementById('compose-form').submit();" class="btn btn-primary"><i class="fa fa-paper-plane"></i> Send</button>
+        </form>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script src="{% static 'mail/inbox.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+textarea {
+    min-height: 400px;
+}
+
+.bd {
+    border-left-color: #616161;
+}
+
+.unread
+{   
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    border-left-color: #1d77a8;
+    border-left-width: 5px;
+    border-left-style: solid;
+    border-right-style: ridge;
+    border-top-style: ridge;
+    border-bottom-style: ridge;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.read
+{   
+    border-right-width: thin;
+    border-top-width: thin;
+    border-bottom-width: thin;
+    border-left-color: #636363;
+    border-left-width: 5px;
+    border-left-style: solid;
+    background-color: #dfdfdf;
+    border-right-style: ridge;
+    border-top-style: ridge;
+    border-bottom-style: ridge;
+}
